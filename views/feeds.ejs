@@ -1,0 +1,55 @@
+<%- include('partials/header.ejs') %>
+
+<style>
+    body{
+        background-color: #FF9843;
+    }
+    
+    </style>
+
+<h3 style="color: green;" class="about">Post your feed here</h3>
+    
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+</head>
+<body>
+    <form  class="feedback-input"  action="/feeds" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="content" id="content">Content:</label>
+        <textarea id="content" name="content" required></textarea><br><br>
+        <input type="submit" value="post">
+    </form>
+
+    <h1>Feed</h1>
+    <div id="feeds-list">
+        <% if (feeds && feeds.length > 0) { %>
+            <% feeds.forEach(feed => { %>
+                <p><strong>Name:</strong> <%= feed.name %></p>
+                <p><strong>Content:</strong> <%= feed.content %></p>
+                <p><strong>Posted at:</strong> <%= feed.created_at %></p>
+                <a href="/edit-feeds/<%= feed.id %>" type="submit">Edit</a>
+                <form action="/delete-feeds/<%= feed.id %>?_method=DELETE" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <hr>
+            <% }); %>
+        <% } else { %>
+            <p>No feeds available.</p>
+        <% } %>
+    </div>
+</body>
+</html>
+
+
+      
+<%- include('partials/footer.ejs') %>
+          
+

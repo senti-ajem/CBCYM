@@ -1,0 +1,47 @@
+
+<%- include('partials/header.ejs') %>
+
+<style>
+  body{
+      background-color: #FF9843;
+  }
+  
+  </style>
+
+   
+
+    <style>
+      #name{
+        width: 30%;
+        
+      }
+      #email{
+        width: 30%;
+      }
+      #prayer{
+        width: 24%;
+      
+      }
+      
+      </style>
+
+    <h3 style="color: green;">Submit Your Prayer Points Here</h3>
+    <% if (message) { %>
+        <p class="feedback-message"><%= message %></p>
+    <% } %>
+    <form class="feedback-input" action="/prayer" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="prayer">Prayer points:</label>
+        <textarea id="prayer" name="prayer" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <%- include('partials/footer.ejs') %>
+

@@ -1,0 +1,66 @@
+<%- include('partials/header.ejs') %>
+
+
+<style>
+body{
+    background-color: #FF9843;
+}
+    
+
+.gallery {
+    display: -webkit-inline-box;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+.gallery-item {
+    border: 1px solid #ccc;
+    padding: 1px;
+    text-align: center;
+}
+.gallery-item-buttons {
+    margin-top: 10px;
+}
+
+.gallery-item img {
+  max-width: 350px;
+  align-content:center; 
+  height: 350px;
+}
+
+#file{
+    color: greenyellow;
+    background-color: #cf1313;
+}
+
+</style>
+
+<h3 style="color: green;">Upload File Here</h3>
+    
+   
+    
+    <form  action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file"  id="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+    
+    <h2 style="color: red;">Gallery</h2>
+    <div class="image-gallery">
+        <% if (files && files.length > 0) { %>
+            <% files.forEach(function(image) { %>
+                <div class="image-item">
+                    <img src="/uploads/<%= image.filename %>" alt="<%= image.filename %>" width="200" height="200">
+                    
+                    <div class="gallery-item-buttons">
+                        <a download='<%= image.filename %>' href='/uploads/<%= image.filename %>'>Download</a>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No images found.</p>
+        <% } %>
+    </div>
+</body>
+</html>
+  
+  
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,57 @@
+
+<%- include('partials/header.ejs') %>
+<style>
+    body{
+        background-color: #FF9843;
+    }
+    
+   
+.image-gallery {
+    display: inline;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.image-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.gallery-item-buttons {
+    margin-top: 10px;
+}
+
+.image-item img {
+  max-width: 80%;
+  align-content:center; 
+  height: 60%;
+}
+
+
+.sunday{
+text-align: center;
+color: #2a843b;
+}
+</style>
+<div>
+<p class="sunday"> service usually starts from 3:30pm on Sunday</p>
+
+<h3 class="sunday">Sunday service program</h3>
+    <div class="image-gallery">
+        <% if (admin.length > 0) { %>
+            <% admin.forEach(function(image) { %>
+                <div class="image-item">
+                    <img src="/program/<%= image.filename %>" alt="<%= image.filename %>">
+                    
+                    <div class="gallery-item-buttons">
+                        <a download='<%= image.filename %>' href='/program/<%= image.filename %>'>Download</a>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No images found.</p>
+        <% } %>
+    </div>
+     
+</div>
+
+<%- include('partials/footer.ejs') %>

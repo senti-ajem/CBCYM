@@ -1,0 +1,24 @@
+
+<%- include('partials/header.ejs') %>
+
+<style>
+
+ #file{
+  color:greenyellow;
+  background-color: red;
+ }
+  
+  </style>
+ <h1>Program</h1>
+ 
+ <h1>Admin Page</h1>
+  <form action="/program" method="post" enctype="multipart/form-data">
+    <input id="file" type="file" name="file">
+    <button type="submit">Upload File</button>
+  </form>
+  <% if (message) { %>
+    <p><%= message %></p>
+  <% } %>
+
+
+  <%- include('partials/footer.ejs') %>
