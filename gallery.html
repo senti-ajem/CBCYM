@@ -43,23 +43,67 @@
 <main class="container">
 
 
-
-<p>
+<style>
+body{
+    background-color: #FF9843;
+}
     
-        <h3 style="color: rgb(9, 91, 9);">About Us </h3>
-        <p style="color: rgb(6, 30, 137);"class="about">Here you can find more detailed information about our Ministry, including our team, vision, and other aspects that make us unique.</p>
-        
-        <!-- Additional Content -->
-        
-        <h3 style="color: rgb(15, 102, 50);">Our Team</h3>
-        <p  style="color: rgb(6, 30, 137);" class="about">We have a passionate and skilled team working together to achieve our goals. Each member brings unique talents and expertise to the table, contributing to the success of our Ministry.</p>
-        
-        <h3 style="color: green;">Our Mission </h3>
-        <p style="color:rgb(6, 30, 137);" class="about">Our Mission  is to  help the people who are weak in spirit. We aim to to bring more people to our lord and saviour Jesus Christ.</p>
-   
- </p>
 
- </main>
+.gallery {
+    display: -webkit-inline-box;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+.gallery-item {
+    border: 1px solid #ccc;
+    padding: 1px;
+    text-align: center;
+}
+.gallery-item-buttons {
+    margin-top: 10px;
+}
+
+.gallery-item img {
+  max-width: 350px;
+  align-content:center; 
+  height: 350px;
+}
+
+#file{
+    color: greenyellow;
+    background-color: #cf1313;
+}
+
+</style>
+
+<h3 style="color: green;">Upload File Here</h3>
+    
+   
+    
+    <form  action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file"  id="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+    
+    <h2 style="color: red;">Gallery</h2>
+    <div class="image-gallery">
+        
+            
+                <div class="image-item">
+                    <img src="/uploads/default-image.jpg" alt="default-image.jpg" width="200" height="200">
+                    
+                    <div class="gallery-item-buttons">
+                        <a download='default-image.jpg' href='/uploads/default-image.jpg'>Download</a>
+                    </div>
+                </div>
+            
+        
+    </div>
+</body>
+</html>
+  
+  
+</main>
 <footer>
   <div class="waves">
     <div class="wave" id="wave1"></div>
