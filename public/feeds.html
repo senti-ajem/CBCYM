@@ -42,25 +42,55 @@
 </header>
 <main class="container">
 
-
-  <h1>CHUNGTIA BAPTIST CHURCH YOUTH MINISTRY</h1>
-  <img class="profile" src="images/logo.jpeg" alt="logo profile">
-  <p style="font-style: italic; font-weight: bold; color: rgb(255, 2, 2);">"ye that fear the lord, trust in the lord" psalm 115:11</p>
-  <br><br><br><br>
-  <p class="p1">Chungtia Baptist Church Youth Ministry is a ministry based on Chungtia Village, Mokokchung, Nagaland,India.This Ministry was 4 september in the year  1932.
-    </p>
-
-  
+<style>
+    body{
+        background-color: #FF9843;
+    }
     
-    
-     
-   
+    </style>
+
+<h3 style="color: green;" class="about">Post your feed here</h3>
     
 
 
-    
 
-  </main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+</head>
+<body>
+    <form  class="feedback-input"  action="/feeds" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="content" id="content">Content:</label>
+        <textarea id="content" name="content" required></textarea><br><br>
+        <input type="submit" value="post">
+    </form>
+
+    <h1>Feed</h1>
+    <div id="feeds-list">
+        
+            
+                <p><strong>Name:</strong> Default Feed</p>
+                <p><strong>Content:</strong> Default content</p>
+                <p><strong>Posted at:</strong> </p>
+                <a href="/edit-feeds/" type="submit">Edit</a>
+                <form action="/delete-feeds/?_method=DELETE" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <hr>
+            
+        
+    </div>
+</body>
+</html>
+
+
+      
+</main>
 <footer>
   <div class="waves">
     <div class="wave" id="wave1"></div>
@@ -103,3 +133,5 @@
 </body>
 
 </html>
+          
+

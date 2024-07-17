@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,25 +43,49 @@
 </header>
 <main class="container">
 
-
-  <h1>CHUNGTIA BAPTIST CHURCH YOUTH MINISTRY</h1>
-  <img class="profile" src="images/logo.jpeg" alt="logo profile">
-  <p style="font-style: italic; font-weight: bold; color: rgb(255, 2, 2);">"ye that fear the lord, trust in the lord" psalm 115:11</p>
-  <br><br><br><br>
-  <p class="p1">Chungtia Baptist Church Youth Ministry is a ministry based on Chungtia Village, Mokokchung, Nagaland,India.This Ministry was 4 september in the year  1932.
-    </p>
-
+<style>
+  body{
+      background-color: #FF9843;
+  }
   
-    
-    
-     
+  </style>
+
    
+
+    <style>
+      #name{
+        width: 30%;
+        
+      }
+      #email{
+        width: 30%;
+      }
+      #prayer{
+        width: 24%;
+      
+      }
+      
+      </style>
+
+    <h3 style="color: green;">Submit Your Prayer Points Here</h3>
     
-
-
+        <p class="feedback-message">Default message</p>
     
+    <form class="feedback-input" action="/prayer" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="prayer">Prayer points:</label>
+        <textarea id="prayer" name="prayer" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 
-  </main>
+
+    </main>
 <footer>
   <div class="waves">
     <div class="wave" id="wave1"></div>
@@ -103,3 +128,4 @@
 </body>
 
 </html>
+

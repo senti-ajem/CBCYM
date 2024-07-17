@@ -43,24 +43,67 @@
 <main class="container">
 
 
-  <h1>CHUNGTIA BAPTIST CHURCH YOUTH MINISTRY</h1>
-  <img class="profile" src="images/logo.jpeg" alt="logo profile">
-  <p style="font-style: italic; font-weight: bold; color: rgb(255, 2, 2);">"ye that fear the lord, trust in the lord" psalm 115:11</p>
-  <br><br><br><br>
-  <p class="p1">Chungtia Baptist Church Youth Ministry is a ministry based on Chungtia Village, Mokokchung, Nagaland,India.This Ministry was 4 september in the year  1932.
-    </p>
+<style>
+body{
+    background-color: #FF9843;
+}
+    
 
-  
+.gallery {
+    display: -webkit-inline-box;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+.gallery-item {
+    border: 1px solid #ccc;
+    padding: 1px;
+    text-align: center;
+}
+.gallery-item-buttons {
+    margin-top: 10px;
+}
+
+.gallery-item img {
+  max-width: 350px;
+  align-content:center; 
+  height: 350px;
+}
+
+#file{
+    color: greenyellow;
+    background-color: #cf1313;
+}
+
+</style>
+
+<h3 style="color: green;">Upload File Here</h3>
     
-    
-     
    
     
-
-
+    <form  action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file"  id="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
     
-
-  </main>
+    <h2 style="color: red;">Gallery</h2>
+    <div class="image-gallery">
+        
+            
+                <div class="image-item">
+                    <img src="/uploads/default-image.jpg" alt="default-image.jpg" width="200" height="200">
+                    
+                    <div class="gallery-item-buttons">
+                        <a download='default-image.jpg' href='/uploads/default-image.jpg'>Download</a>
+                    </div>
+                </div>
+            
+        
+    </div>
+</body>
+</html>
+  
+  
+</main>
 <footer>
   <div class="waves">
     <div class="wave" id="wave1"></div>
